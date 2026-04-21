@@ -1,0 +1,7 @@
+## Local-only Android Studio configuration
+## Copy this file to HKFilmMap/local.properties and fill in real values.
+
+sdk.dir=C:\\Path\\To\\Android\\Sdk
+GOOGLE_MAPS_API_KEY=replace_with_google_maps_sdk_key
+DIRECTIONS_API_KEY=replace_with_google_directions_key
+FIREBASE_AUTH_CONTINUE_URL=https://your-project.firebaseapp.com/__/auth/links

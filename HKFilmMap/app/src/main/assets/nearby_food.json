@@ -1,0 +1,342 @@
+[
+  {
+    "name": "Chungking Mansions Curry House",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tsim Sha Tsui",
+    "latitude": 22.29700,
+    "longitude": 114.17250,
+    "description": "Authentic Indian curry in the heart of Chungking Mansions",
+    "priceRange": "$"
+  },
+  {
+    "name": "Spring Deer Restaurant",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tsim Sha Tsui",
+    "latitude": 22.29850,
+    "longitude": 114.17180,
+    "description": "Classic Peking duck since 1968",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Ozone Bar",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Tsim Sha Tsui",
+    "latitude": 22.30480,
+    "longitude": 114.16140,
+    "description": "Sky-high coffee and cocktails at ICC",
+    "priceRange": "$$$"
+  },
+  {
+    "name": "Australian Dairy Company",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tsim Sha Tsui",
+    "latitude": 22.29950,
+    "longitude": 114.17050,
+    "description": "Legendary scrambled eggs and steamed milk pudding",
+    "priceRange": "$"
+  },
+  {
+    "name": "Honolulu Coffee Shop",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Tsim Sha Tsui",
+    "latitude": 22.29780,
+    "longitude": 114.17300,
+    "description": "Old-school Hong Kong style egg tarts and coffee",
+    "priceRange": "$"
+  },
+  {
+    "name": "Lan Fong Yuen",
+    "nameZh": "",
+    "category": "food",
+    "district": "Central",
+    "latitude": 22.28120,
+    "longitude": 114.15540,
+    "description": "Inventor of Hong Kong-style silk stocking milk tea",
+    "priceRange": "$"
+  },
+  {
+    "name": "Tsui Wah Restaurant",
+    "nameZh": "",
+    "category": "food",
+    "district": "Central",
+    "latitude": 22.28230,
+    "longitude": 114.15640,
+    "description": "Iconic cha chaan teng open late into the night",
+    "priceRange": "$"
+  },
+  {
+    "name": "Cupping Room",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Central",
+    "latitude": 22.28180,
+    "longitude": 114.15380,
+    "description": "Award-winning specialty coffee in SoHo",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Tai Cheong Bakery",
+    "nameZh": "",
+    "category": "dessert",
+    "district": "Central",
+    "latitude": 22.28250,
+    "longitude": 114.15200,
+    "description": "Famous egg tarts loved by the last Governor Chris Patten",
+    "priceRange": "$"
+  },
+  {
+    "name": "Oddly Enough",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Central",
+    "latitude": 22.28310,
+    "longitude": 114.15100,
+    "description": "Trendy third-wave coffee along the Mid-Levels Escalator",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Tong Chong Street Market Cafe",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Quarry Bay",
+    "latitude": 22.29100,
+    "longitude": 114.21700,
+    "description": "Relaxed waterfront coffee at TaiKoo Place",
+    "priceRange": "$$"
+  },
+  {
+    "name": "King of Congee and Noodle",
+    "nameZh": "",
+    "category": "food",
+    "district": "Quarry Bay",
+    "latitude": 22.28780,
+    "longitude": 114.21400,
+    "description": "Hearty rice noodles and congee for locals",
+    "priceRange": "$"
+  },
+  {
+    "name": "Elephant Grounds",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Quarry Bay",
+    "latitude": 22.29050,
+    "longitude": 114.21630,
+    "description": "Hong Kong born specialty coffee and ice cream sandwiches",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Ngan Lung Restaurant",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tuen Mun",
+    "latitude": 22.39250,
+    "longitude": 113.97630,
+    "description": "Local cha chaan teng with classic milk tea and pork chop rice",
+    "priceRange": "$"
+  },
+  {
+    "name": "Sam Shing Seafood Market",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tuen Mun",
+    "latitude": 22.37500,
+    "longitude": 113.96600,
+    "description": "Fresh seafood market with cooked-to-order stalls",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Cafe de Coral Tuen Mun",
+    "nameZh": "",
+    "category": "food",
+    "district": "Tuen Mun",
+    "latitude": 22.39080,
+    "longitude": 113.97400,
+    "description": "Reliable fast-food chain with Hong Kong style meals",
+    "priceRange": "$"
+  },
+  {
+    "name": "Kau Kee Restaurant",
+    "nameZh": "",
+    "category": "food",
+    "district": "Sheung Wan",
+    "latitude": 22.28500,
+    "longitude": 114.15030,
+    "description": "Legendary beef brisket noodles since 1920s",
+    "priceRange": "$"
+  },
+  {
+    "name": "MatchAll Coffee",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Sheung Wan",
+    "latitude": 22.28650,
+    "longitude": 114.14920,
+    "description": "Minimalist specialty coffee in a quiet lane",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Man Mo Cafe",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Sheung Wan",
+    "latitude": 22.28400,
+    "longitude": 114.15000,
+    "description": "Cozy cafe near Man Mo Temple with pour-over options",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Ser Wong Fun",
+    "nameZh": "",
+    "category": "food",
+    "district": "Sheung Wan",
+    "latitude": 22.28460,
+    "longitude": 114.15080,
+    "description": "Historic claypot rice and snake soup since 1895",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Sha Tin 18",
+    "nameZh": "",
+    "category": "food",
+    "district": "Sha Tin",
+    "latitude": 22.39650,
+    "longitude": 114.18830,
+    "description": "Refined Cantonese cuisine at Hyatt Regency",
+    "priceRange": "$$$"
+  },
+  {
+    "name": "Siu Mei King",
+    "nameZh": "",
+    "category": "food",
+    "district": "Sha Tin",
+    "latitude": 22.38150,
+    "longitude": 114.18900,
+    "description": "Popular roast goose and char siu rice box",
+    "priceRange": "$"
+  },
+  {
+    "name": "Pacific Coffee Sha Tin",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Sha Tin",
+    "latitude": 22.38200,
+    "longitude": 114.18800,
+    "description": "Local chain coffee near New Town Plaza",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Mido Cafe",
+    "nameZh": "",
+    "category": "food",
+    "district": "Yau Ma Tei",
+    "latitude": 22.30530,
+    "longitude": 114.17030,
+    "description": "Iconic retro cha chaan teng overlooking Temple Street",
+    "priceRange": "$"
+  },
+  {
+    "name": "Nathan Congee and Noodle",
+    "nameZh": "",
+    "category": "food",
+    "district": "Yau Ma Tei",
+    "latitude": 22.30620,
+    "longitude": 114.17100,
+    "description": "Traditional congee and wonton noodle near Jade Market",
+    "priceRange": "$"
+  },
+  {
+    "name": "Kubrick Bookshop Cafe",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Yau Ma Tei",
+    "latitude": 22.30500,
+    "longitude": 114.17150,
+    "description": "Artsy cafe attached to Broadway Cinematheque",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Temple Street Dessert Stall",
+    "nameZh": "",
+    "category": "dessert",
+    "district": "Yau Ma Tei",
+    "latitude": 22.30480,
+    "longitude": 114.17070,
+    "description": "Open-air mango sago and tofu pudding",
+    "priceRange": "$"
+  },
+  {
+    "name": "Kam Wah Cafe",
+    "nameZh": "",
+    "category": "food",
+    "district": "Mong Kok",
+    "latitude": 22.31920,
+    "longitude": 114.17060,
+    "description": "Famous pineapple buns fresh from the oven",
+    "priceRange": "$"
+  },
+  {
+    "name": "Good Hope Noodle",
+    "nameZh": "",
+    "category": "food",
+    "district": "Mong Kok",
+    "latitude": 22.32100,
+    "longitude": 114.17200,
+    "description": "Springy shrimp wonton noodles in Mong Kok back streets",
+    "priceRange": "$"
+  },
+  {
+    "name": "% Arabica Mong Kok",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Mong Kok",
+    "latitude": 22.31850,
+    "longitude": 114.17150,
+    "description": "Kyoto-born specialty latte art in a sleek space",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Hui Lau Shan",
+    "nameZh": "",
+    "category": "dessert",
+    "district": "Mong Kok",
+    "latitude": 22.31700,
+    "longitude": 114.17000,
+    "description": "Mango desserts and fresh fruit drinks",
+    "priceRange": "$"
+  },
+  {
+    "name": "Jumbo Kingdom (Memory)",
+    "nameZh": "",
+    "category": "food",
+    "district": "Aberdeen",
+    "latitude": 22.24100,
+    "longitude": 114.15000,
+    "description": "Seafood restaurants near the old Jumbo floating restaurant site",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Aberdeen Fish Market Canteen",
+    "nameZh": "",
+    "category": "food",
+    "district": "Aberdeen",
+    "latitude": 22.24250,
+    "longitude": 114.15300,
+    "description": "Ultra-fresh seafood right at the wholesale market",
+    "priceRange": "$$"
+  },
+  {
+    "name": "Starbucks Aberdeen",
+    "nameZh": "",
+    "category": "coffee",
+    "district": "Aberdeen",
+    "latitude": 22.24800,
+    "longitude": 114.15550,
+    "description": "Waterfront coffee with harbour views",
+    "priceRange": "$$"
+  }
+]

@@ -1,0 +1,86 @@
+import java.net.URI
+import java.util.Properties
+
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { stream ->
+        localProperties.load(stream)
+    }
+}
+
+def requireLocalProperty = { String name ->
+    def value = localProperties.getProperty(name)?.trim()
+    if (!value) {
+        throw new GradleException("Missing `${name}` in HKFilmMap/local.properties. See ../docs/CONFIGURATION.md.")
+    }
+    return value
+}
+
+def mapsApiKey = requireLocalProperty('GOOGLE_MAPS_API_KEY')
+def directionsApiKey = requireLocalProperty('DIRECTIONS_API_KEY')
+def firebaseAuthContinueUrl = requireLocalProperty('FIREBASE_AUTH_CONTINUE_URL')
+def firebaseAuthUri = new URI(firebaseAuthContinueUrl)
+if (!firebaseAuthUri.scheme || !firebaseAuthUri.host) {
+    throw new GradleException("FIREBASE_AUTH_CONTINUE_URL must be a valid absolute URL.")
+}
+def firebaseAuthPathPrefix = firebaseAuthUri.path?.trim() ? firebaseAuthUri.path : '/'
+
+android {
+    namespace 'com.polyu.hkfilmmap'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.polyu.hkfilmmap"
+        minSdk 26
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        resValue "string", "google_maps_api_key", mapsApiKey
+        resValue "string", "directions_api_key", directionsApiKey
+        resValue "string", "firebase_auth_continue_url", firebaseAuthContinueUrl
+
+        manifestPlaceholders = [
+                firebaseAuthContinueScheme    : firebaseAuthUri.scheme,
+                firebaseAuthContinueHost      : firebaseAuthUri.host,
+                firebaseAuthContinuePathPrefix: firebaseAuthPathPrefix
+        ]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.room:room-runtime:2.6.1'
+    annotationProcessor 'androidx.room:room-compiler:2.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.google.android.gms:play-services-maps:18.2.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    implementation platform('com.google.firebase:firebase-bom:34.12.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.android.gms:play-services-auth:21.5.1'
+}

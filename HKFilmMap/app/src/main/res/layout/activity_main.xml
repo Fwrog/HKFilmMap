@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/bottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@color/surface_card"
+        app:cardCornerRadius="@dimen/radius_xl"
+        app:cardElevation="8dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="84dp">
+
+            <!-- Drag handle -->
+            <View
+                android:layout_width="@dimen/drag_handle_width"
+                android:layout_height="@dimen/drag_handle_height"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:background="@drawable/bg_drag_handle" />
+
+            <!-- Collapsible stats header -->
+            <LinearLayout
+                android:id="@+id/layoutStatsHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_xl"
+                android:paddingTop="@dimen/spacing_m">
+
+                <TextView
+                    android:id="@+id/tvSheetTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_verified_places"
+                    style="@style/TextAppearance.App.LargeTitle" />
+
+                <TextView
+                    android:id="@+id/tvSheetSubtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    style="@style/TextAppearance.App.Subhead" />
+
+                <LinearLayout
+                    android:id="@+id/layoutProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/progressCheckIn"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressBackgroundTint="@color/separator" />
+
+                    <TextView
+                        android:id="@+id/tvStats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_s"
+                        style="@style/TextAppearance.App.Caption" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_m"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAchievements"
+                        style="@style/Widget.App.Button.Secondary"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="@dimen/spacing_s"
+                        android:layout_weight="1"
+                        android:text="@string/action_achievements"
+                        android:textSize="@dimen/text_subhead" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSignOut"
+                        style="@style/Widget.App.Button.Destructive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="@string/auth_action_sign_out"
+                        android:textSize="@dimen/text_subhead" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Search pill -->
+            <EditText
+                android:id="@+id/inputPlaceSearch"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="@dimen/spacing_xl"
+                android:layout_marginTop="@dimen/spacing_m"
+                android:background="@drawable/bg_search_pill"
+                android:drawableStart="@drawable/ic_search"
+                android:drawablePadding="@dimen/spacing_s"
+                android:hint="@string/route_search_hint"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_tertiary"
+                android:textSize="@dimen/text_body"
+                android:visibility="gone" />
+
+            <!-- Genre chip area -->
+            <HorizontalScrollView
+                android:id="@+id/chipScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/spacing_xl"
+                android:scrollbars="none">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true" />
+            </HorizontalScrollView>
+
+            <!-- Back button (for place detail mode) -->
+            <TextView
+                android:id="@+id/btnSheetBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_xl"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:drawableStart="@drawable/ic_arrow_back"
+                android:drawablePadding="@dimen/spacing_xs"
+                android:gravity="center_vertical"
+                android:padding="@dimen/spacing_s"
+                android:text="@string/action_back_to_places"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_body"
+                android:visibility="gone" />
+
+            <!-- Action rows (for selected place) -->
+            <LinearLayout
+                android:id="@+id/layoutPlaceActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/spacing_l"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/btnOpenPlacePage"
+                    style="@style/Widget.App.ActionRow"
+                    android:layout_width="match_parent">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_explore"
+                        app:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_m"
+                        android:layout_weight="1"
+                        android:text="@string/action_open_place_page"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="52dp"
+                    android:background="@color/separator" />
+
+                <LinearLayout
+                    android:id="@+id/btnPlaceRecommendations"
+                    style="@style/Widget.App.ActionRow"
+                    android:layout_width="match_parent">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_food"
+                        app:tint="@color/colorAccent" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_m"
+                        android:layout_weight="1"
+                        android:text="@string/action_nearby_picks"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_chevron_right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvEmptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/spacing_xxl"
+                style="@style/TextAppearance.App.Subhead"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPlaces"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/spacing_l"
+                android:paddingBottom="@dimen/spacing_s" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPlaceScenes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:paddingHorizontal="@dimen/spacing_l"
+                android:paddingBottom="@dimen/spacing_s"
+                android:visibility="gone" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_nav_separator"
+        android:elevation="0dp"
+        app:itemIconTint="@color/bottom_nav_item_tint"
+        app:itemTextColor="@color/bottom_nav_item_tint"
+        app:menu="@menu/menu_bottom_nav" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

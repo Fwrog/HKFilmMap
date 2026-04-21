@@ -1,0 +1,25 @@
+# Android / Gradle
+HKFilmMap/.gradle/
+HKFilmMap/.idea/
+HKFilmMap/**/build/
+HKFilmMap/local.properties
+HKFilmMap/app/google-services.json
+*.iml
+
+# Python
+**/__pycache__/
+*.py[cod]
+
+# Backend local configs and generated artifacts
+backend/config/*.local.json
+backend/config/tmdb_config.json
+backend/config/google_maps_config.json
+backend/output/
+
+# Common local env files
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db

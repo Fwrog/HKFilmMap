@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_explore"
+        android:icon="@drawable/ic_explore"
+        android:title="@string/action_explore_home" />
+
+    <item
+        android:id="@+id/nav_route"
+        android:icon="@drawable/ic_route"
+        android:title="@string/action_route_planner" />
+
+    <item
+        android:id="@+id/nav_movies"
+        android:icon="@drawable/ic_movie"
+        android:title="@string/action_browse_movies" />
+</menu>

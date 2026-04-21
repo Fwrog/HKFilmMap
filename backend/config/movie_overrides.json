@@ -1,0 +1,53 @@
+{
+  "title_aliases": {
+    "C'est La Vie, Mon Cheri": "C’est La Vie, Mon Chéri",
+    "C'est La Vie, Mon Chéri": "C’est La Vie, Mon Chéri"
+  },
+  "title_zh_overrides": {
+    "Big Brother": "大師兄",
+    "The Medallion": "飛龍再生",
+    "The Accidental Spy": "特務迷城",
+    "Heart of Dragon": "龍的心",
+    "Roco Kingdom 2: The Desire of Dragon": "洛克王國2：聖龍的心願",
+    "Lee Rock": "雷洛傳",
+    "King of Comedy": "喜劇之王",
+    "King Of Comedy": "喜劇之王",
+    "Brenda Lee: Rockin' Around": "雷洛傳",
+    "As Tears Go By": "旺角卡門"
+  },
+  "tmdb_ids": {
+    "C’est La Vie, Mon Chéri": 107682,
+    "Rouge": 68883,
+    "Heart of Dragon": 18763,
+    "Lee Rock": 212996,
+    "Big Brother": 504056,
+    "The Medallion": 10610,
+    "The Accidental Spy": 11847,
+    "King of Comedy": 53168,
+    "King Of Comedy": 53168,
+    "As Tears Go By": 24163,
+    "Beyond the Dream": 674813,
+    "The Myth": 11653,
+    "Election": 18747,
+    "Cold War": 137409,
+    "Don't Go Breaking My Heart": 67793,
+    "Fallen Angels": 11220,
+    "In the Mood for Love": 843,
+    "Days of Being Wild": 18311,
+    "God of Gamblers": 16269,
+    "Aces Go Places": 2644,
+    "A Lifetime Treasure": 576669,
+    "Love in a Puff": 41993,
+    "Overheard 2": 74639,
+    "Running on Karma": 32233,
+    "Shock Wave 2": 559974,
+    "Twilight of the Warriors: Walled In": 923667
+  },
+  "year_overrides": {
+    "C’est La Vie, Mon Chéri": 1993,
+    "Rouge": 1987
+  },
+  "ignored_titles": [
+    "Expats"
+  ]
+}

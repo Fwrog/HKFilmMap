@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007AFF</color>
+    <color name="colorPrimaryDark">#0056CC</color>
+    <color name="colorAccent">#FF9500</color>
+
+    <color name="text_primary">#1C1C1E</color>
+    <color name="text_secondary">#8E8E93</color>
+    <color name="text_tertiary">#C7C7CC</color>
+    <color name="text_hint">#C7C7CC</color>
+
+    <color name="surface">#F2F2F7</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_card_secondary">#F9F9FB</color>
+    <color name="soft_blue_background">#F2F2F7</color>
+
+    <color name="separator">#E5E5EA</color>
+    <color name="destructive">#FF3B30</color>
+    <color name="success">#34C759</color>
+    <color name="checked_in">#34C759</color>
+
+    <color name="route_color">#FF3B30</color>
+    <color name="genre_action">#FF3B30</color>
+    <color name="genre_romance">#FF9500</color>
+    <color name="genre_crime">#8E8E93</color>
+    <color name="genre_comedy">#FFCC00</color>
+    <color name="genre_scifi">#5AC8FA</color>
+    <color name="genre_default">#C7C7CC</color>
+
+    <color name="chip_selected_bg">#007AFF</color>
+    <color name="chip_default_bg">#E5E5EA</color>
+    <color name="chip_selected_text">#FFFFFF</color>
+    <color name="chip_default_text">#1C1C1E</color>
+</resources>

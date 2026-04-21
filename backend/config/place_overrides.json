@@ -1,0 +1,468 @@
+{
+  "title_aliases": {
+    "C'est La Vie, Mon Chéri": "C’est La Vie, Mon Chéri",
+    "C'est La Vie, Mon Cheri": "C’est La Vie, Mon Chéri"
+  },
+  "place_aliases": {
+    "Lobby of Guangdong Investment Tower, Sheung Wan": "Guangdong Investment Tower",
+    "Ten Thousand Buddhas Monastery, Sha Tin": "Ten Thousand Buddhas Monastery",
+    "Hollywood Road, Central": "Hollywood Road",
+    "Hollywood Road, Sheung Wan": "Hollywood Road",
+    "Tsing Shan Monastery, Castle Peak": "Tsing Shan Monastery",
+    "Canton Road near YMCA, Tsim Sha Tsui": "Canton Road, Tsim Sha Tsui",
+    "The Cenotaph, Central": "Cenotaph, Central",
+    "Gage Street Market, Central": "Gage Street Market",
+    "Central-Mid-Levels Escalator, Central": "Central-Mid-Levels Escalator",
+    "Chungking Mansions, Tsim Sha Tsui": "Chungking Mansions",
+    "Star Ferry, Tsim Sha Tsui": "Star Ferry Pier",
+    "Star Ferry Pier, Tsim Sha Tsui": "Star Ferry Pier",
+    "Temple Street Night Market, Yau Ma Tei": "Temple Street Night Market",
+    "Lui Seng Chun, Mong Kok": "Lui Seng Chun",
+    "Tsim Sha Tsui Promenade, Kowloon": "Tsim Sha Tsui Promenade",
+    "Wing On Plaza / iSQUARE, Tsim Sha Tsui": "Wing On Plaza (now iSQUARE)",
+    "Montane Mansion, Quarry Bay": "Montane Mansion (Monster Building)",
+    "Aberdeen Typhoon Shelter": "Aberdeen Harbour"
+  },
+  "coordinate_overrides": {
+    "Hill Road flyover, Shek Tong Tsui": {
+      "latitude": 22.2853677,
+      "longitude": 114.1358725,
+      "addressEn": "Hill Rd, Shek Tong Tsui, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "1/F, Fu Yin Court, 39 Hill Rd, Shek Tong Tsui, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 84,
+      "query": "Hill Road flyover, Shek Tong Tsui, Hong Kong"
+    },
+    "Tsing Fung Street flyover, Causeway Bay": {
+      "latitude": 22.2847455,
+      "longitude": 114.1914447,
+      "addressEn": "Tsing Fung Street Flyover, Causeway Bay, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Fat Cheong Building, Electric Rd, Causeway Bay, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 88,
+      "query": "Tsing Fung Street flyover, Causeway Bay, Hong Kong"
+    },
+    "Avenue of Stars, Tsim Sha Tsui": {
+      "latitude": 22.29344,
+      "longitude": 114.1751417,
+      "addressEn": "Ave of Stars, Tsim Sha Tsui, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "18 Salisbury Rd, Tsim Sha Tsui, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 84,
+      "query": "Avenue of Stars, Tsim Sha Tsui, Hong Kong"
+    },
+    "Shing Mun River, Sha Tin": {
+      "latitude": 22.38980542823151,
+      "longitude": 114.1914941407809,
+      "addressEn": "Shing Mun River, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "95QR+WH Sha Tin, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 74,
+      "query": "Shing Mun River, Sha Tin, Hong Kong"
+    },
+    "Lung Wah Hotel, Sha Tin": {
+      "latitude": 22.3881951,
+      "longitude": 114.1915648,
+      "addressEn": "Lung Wah Hotel, Sha Tin, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Lung Wah Hotel, Sha Tin, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Lung Wah Hotel, Sha Tin, Hong Kong"
+    },
+    "Graham Street Market, Central": {
+      "latitude": 22.2829471,
+      "longitude": 114.1535569,
+      "addressEn": "14 Gage St, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Hong Kong, Central, Gage St, 12號號地下",
+      "source": "google_geocoding",
+      "confidence": 78,
+      "query": "Graham Street Market, Central, Hong Kong"
+    },
+    "California Restaurant on Lan Kwai Fong, Central": {
+      "latitude": 22.2810792,
+      "longitude": 114.1554797,
+      "addressEn": "1 Lan Kwai Fong, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "1 Lan Kwai Fong, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 72,
+      "query": "California Restaurant on Lan Kwai Fong, Central, Hong Kong"
+    },
+    "Lei Yue Mun Park & Holiday Village, Chai Wan": {
+      "latitude": 22.280115,
+      "longitude": 114.2327106,
+      "addressEn": "Block 7, Lei Yue Mun Park, 75 Chai Wan Rd, Chai Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "75, Lei Yue Mun Park And Holiday Village, Chai Wan Rd, Sai Wan Shan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Lei Yue Mun Park & Holiday Village, Chai Wan, Hong Kong"
+    },
+    "Ultra Isotherm Audio & Video Co., 151 Apliu Street, Sham Shui Po": {
+      "latitude": 22.3294729,
+      "longitude": 114.1627725,
+      "addressEn": "151 Apliu St, Sham Shui Po, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "153 Apliu St, Sham Shui Po, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Ultra Isotherm Audio & Video Co., 151 Apliu Street, Sham Shui Po, Hong Kong"
+    },
+    "Alley beside Golden Gateway, 25 Canton Road, Tsim Sha Tsui": {
+      "latitude": 22.2990863,
+      "longitude": 114.1683255,
+      "addressEn": "25 Canton Rd, Tsim Sha Tsui, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "25 Canton Rd, Tsim Sha Tsui, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Alley beside Golden Gateway, 25 Canton Road, Tsim Sha Tsui, Hong Kong"
+    },
+    "Sunshine Kowloon Bay Cargo Centre, 59 Tai Yip Street, Kowloon Bay": {
+      "latitude": 22.3190156,
+      "longitude": 114.2129015,
+      "addressEn": "None, Sunshine Kowloon Bay Cargo Centre, 59 Tai Yip St, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Sunshine Kowloon Bay Cargo Centre, 59-63 Tai Yip St, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Sunshine Kowloon Bay Cargo Centre, 59 Tai Yip Street, Kowloon Bay, Hong Kong"
+    },
+    "Star Ferry multi‑storey car park, Central": {
+      "latitude": 22.282717,
+      "longitude": 114.1604039,
+      "addressEn": "9 Edinburgh Pl, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "9 Edinburgh Pl, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 78,
+      "query": "Star Ferry multi‑storey car park, Central, Hong Kong"
+    },
+    "Hong Kong-Macau Ferry Terminal at Shun Tak Centre, Sheung Wan": {
+      "latitude": 22.2880939,
+      "longitude": 114.151766,
+      "addressEn": "3/f, Shun Tak Centre, 200 Connaught Rd Central, Sheung Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "3/f, Shun Tak Centre, 200 Connaught Rd Central, Sheung Wan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Hong Kong-Macau Ferry Terminal at Shun Tak Centre, Sheung Wan, Hong Kong"
+    },
+    "Western Market on Des Voeux Road Central, Sheung Wan": {
+      "latitude": 22.287287,
+      "longitude": 114.150392,
+      "addressEn": "323 Des Voeux Rd Central, Sheung Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "323 Des Voeux Rd Central, Sheung Wan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Western Market on Des Voeux Road Central, Sheung Wan, Hong Kong"
+    },
+    "Former Bottoms Up Bar, 14 Hankow Road, Tsim Sha Tsui": {
+      "latitude": 22.2958937,
+      "longitude": 114.1712229,
+      "addressEn": "14 Hankow Rd, Tsim Sha Tsui, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "14 Hankow Rd, Tsim Sha Tsui, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Former Bottoms Up Bar, 14 Hankow Road, Tsim Sha Tsui, Hong Kong"
+    },
+    "Dragon Garden, Castle Peak Road, Tsuen Wan": {
+      "latitude": 22.3716852,
+      "longitude": 114.1174488,
+      "addressEn": "47號 Tsuen Wan Market St, Tsuen Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "47號 Tsuen Wan Market St, Tsuen Wan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 82,
+      "query": "Dragon Garden, Castle Peak Road, Tsuen Wan, Hong Kong"
+    },
+    "Royal Hong Kong Yacht Club, Causeway Bay": {
+      "latitude": 22.2844752,
+      "longitude": 114.1822231,
+      "addressEn": "Kellett Island, Causeway Bay, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Kellett Island, Causeway Bay, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Royal Hong Kong Yacht Club, Causeway Bay, Hong Kong"
+    },
+    "Hennessy Road, Causeway Bay": {
+      "latitude": 22.2799244,
+      "longitude": 114.1829091,
+      "addressEn": "Hennessy Rd, Causeway Bay, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "48 Percival St, Causeway Bay, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 80,
+      "query": "Hennessy Road, Causeway Bay, Hong Kong"
+    },
+    "Hong Kong Convention & Exhibition Centre, Wan Chai": {
+      "latitude": 22.2833754,
+      "longitude": 114.1731385,
+      "addressEn": "1號 Expo Dr, Wan Chai, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "1號 Expo Dr, Wan Chai, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 82,
+      "query": "Hong Kong Convention & Exhibition Centre, Wan Chai, Hong Kong"
+    },
+    "Merit Industrial Centre, 94 To Kwa Wan Road": {
+      "latitude": 22.3187714,
+      "longitude": 114.1914967,
+      "addressEn": "94 To Kwa Wan Rd, To Kwa Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "94 To Kwa Wan Rd, To Kwa Wan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 90,
+      "query": "Merit Industrial Centre, 94 To Kwa Wan Road, Hong Kong"
+    },
+    "Chater Street, Central": {
+      "latitude": 22.2814678,
+      "longitude": 114.1599255,
+      "addressEn": "Chater Rd, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Statue Square; Chater Road, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Chater Street, Central, Hong Kong"
+    },
+    "Jardine House, Central": {
+      "latitude": 22.2830289,
+      "longitude": 114.1589161,
+      "addressEn": "1號 Connaught Pl, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Suite 3201 Jardine House Central, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 78,
+      "query": "Jardine House, Central, Hong Kong"
+    },
+    "Grand Millennium Plaza, Sheung Wan": {
+      "latitude": 22.2855335,
+      "longitude": 114.1529461,
+      "addressEn": "Cosco Tower, 183 Queen's Road Central, Sheung Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Hong Kong, Sheung Wan, Queen's Road Central, HK 香港島 上環 環183號高座中遠大廈3002室",
+      "source": "google_geocoding",
+      "confidence": 82,
+      "query": "Grand Millennium Plaza, Sheung Wan, Hong Kong"
+    },
+    "Near 284 Queens Road East, Wan Chai": {
+      "latitude": 22.2752778,
+      "longitude": 114.1782124,
+      "addressEn": "284 Queen's Rd E, Wan Chai, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Hong Kong, 灣仔皇后大道東284號4字樓",
+      "source": "google_geocoding",
+      "confidence": 80,
+      "query": "Near 284 Queens Road East, Wan Chai, Hong Kong"
+    },
+    "Ocean Park, Aberdeen": {
+      "latitude": 22.2466607,
+      "longitude": 114.1757239,
+      "addressEn": "Aberdeen, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "K33, G/F., Rainforest, Ocean Park, Aberdeen, Hong Kong, Ocean Park, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 72,
+      "query": "Ocean Park, Aberdeen, Hong Kong"
+    },
+    "Old Yau Ma Tei Police Station": {
+      "latitude": 22.3097596,
+      "longitude": 114.1688336,
+      "addressEn": "59 Public Square St, Yau Ma Tei, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "59 Public Square St, Yau Ma Tei, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 74,
+      "query": "Old Yau Ma Tei Police Station, Hong Kong"
+    },
+    "Kowloon Walled City Park": {
+      "latitude": 22.3321296,
+      "longitude": 114.1903285,
+      "addressEn": "Kowloon Walled City Park, Kowloon City, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "85JR+V4 Kowloon City, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 72,
+      "query": "Kowloon Walled City Park, Hong Kong"
+    },
+    "Star Ferry Pier, Tsim Sha Tsui": {
+      "latitude": 22.2937143,
+      "longitude": 114.1686236,
+      "addressEn": "Star Ferry Pier, 3 Salisbury Rd, Tsim Sha Tsui, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Star Ferry Pier, 3 Salisbury Rd, Tsim Sha Tsui, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Star Ferry Pier, Tsim Sha Tsui, Hong Kong"
+    },
+    "Bridges Street YMCA, Sheung Wan": {
+      "latitude": 22.2839302,
+      "longitude": 114.1495481,
+      "addressEn": "51 Bridges St, Sheung Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Near Main Entrance, Wu Kai Sha YMCA Youth Village, On Chun Street, Ma On Shan, Tai Ping Shan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 86,
+      "query": "Bridges Street YMCA, Sheung Wan, Hong Kong"
+    },
+    "Ice House Street, Central": {
+      "latitude": 22.2803087,
+      "longitude": 114.1579337,
+      "addressEn": "Ice House St, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "11 Queen's Road Central, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 80,
+      "query": "Ice House Street, Central, Hong Kong"
+    },
+    "Man Mo Temple, Sheung Wan": {
+      "latitude": 22.2839729,
+      "longitude": 114.1501999,
+      "addressEn": "Man Mo Temple, 124-130 Hollywood Rd, Sheung Wan, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Man Mo Temple, 124-126 Hollywood Rd, Tai Ping Shan, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Man Mo Temple, Sheung Wan, Hong Kong"
+    },
+    "Sha Tin Racecourse, Sha Tin": {
+      "latitude": 22.3997555,
+      "longitude": 114.2040051,
+      "addressEn": "6001 Tai Po Road (Sha Tin), Sha Tin, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "6001 Tai Po Road (Sha Tin), Sha Tin, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 82,
+      "query": "Sha Tin Racecourse, Sha Tin, Hong Kong"
+    },
+    "Lan Kwai Fong, Central": {
+      "latitude": 22.2806973,
+      "longitude": 114.1555456,
+      "addressEn": "Lan Kwai Fong, Central, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "19 Lan Kwai Fong, Central, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 84,
+      "query": "Lan Kwai Fong, Central, Hong Kong"
+    },
+    "Tin Hau Temple, Shek O": {
+      "latitude": 22.230601,
+      "longitude": 114.252093,
+      "addressEn": "Hong Kong, Shek O, 天后廟",
+      "districtEn": null,
+      "reverseAddressEn": "Hong Kong, Shek O, 天后廟",
+      "source": "google_geocoding",
+      "confidence": 76,
+      "query": "Tin Hau Temple, Shek O, Hong Kong"
+    },
+    "Temple Street, Yau Ma Tei": {
+      "latitude": 22.3073082,
+      "longitude": 114.1702215,
+      "addressEn": "Temple St, Yau Ma Tei, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "156-158 Temple Street, Yau Ma Tei, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 84,
+      "query": "Temple Street, Yau Ma Tei, Hong Kong"
+    },
+    "Quarry Bay MTR Station": {
+      "latitude": 22.2878748,
+      "longitude": 114.2097467,
+      "addressEn": "MTR Quarry Bay Station, Quarry Bay, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Hong Kong, Quarry Bay, Finnie St, 英皇 道 與 交界 Quarry Bay",
+      "source": "google_geocoding",
+      "confidence": 78,
+      "query": "Quarry Bay MTR Station, Hong Kong"
+    },
+    "Monster Building, Quarry Bay": {
+      "latitude": 22.2842028,
+      "longitude": 114.2123028,
+      "addressEn": "Yick Cheong Building, King's Rd, Quarry Bay, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "Yick Cheong Building, King's Rd, Quarry Bay, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 86,
+      "query": "Monster Building, Quarry Bay, Hong Kong"
+    },
+    "Mido Cafe, 63 Temple Street, Yau Ma Tei": {
+      "latitude": 22.3102211,
+      "longitude": 114.1702722,
+      "addressEn": "63 Temple St, Yau Ma Tei, Hong Kong",
+      "districtEn": null,
+      "reverseAddressEn": "63 Temple St, Yau Ma Tei, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 94,
+      "query": "Mido Cafe, 63 Temple Street, Yau Ma Tei, Hong Kong"
+    },
+    "Goldfinch Restaurant, Causeway Bay": {
+      "latitude": 22.278744,
+      "longitude": 114.184277,
+      "addressEn": "Hong Kong, Causeway Bay, Lan Fong Rd, 13號號地下",
+      "districtEn": null,
+      "reverseAddressEn": "13 Lan Fong Road, Lan Fong Rd, Causeway Bay, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 82,
+      "query": "Goldfinch Restaurant, Causeway Bay, Hong Kong"
+    },
+    "Intersection of Shantung Street and Sai Yee Street, Mong Kok": {
+      "latitude": 22.317936,
+      "longitude": 114.172027,
+      "addressEn": "Shantung St & Sai Yee St, Mong Kok, Hong Kong",
+      "districtEn": "Mong Kok",
+      "reverseAddressEn": "31 Sai Yee St, Mong Kok, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 70,
+      "query": "Intersection of Shantung Street and Sai Yee Street, Mong Kok, Hong Kong"
+    },
+    "China Cafe on Canton Road, Mong Kok": {
+      "latitude": 22.3189099,
+      "longitude": 114.1672133,
+      "addressEn": "Canton Rd, Mong Kok, Hong Kong",
+      "districtEn": "Mong Kok",
+      "reverseAddressEn": "Canton Road Market, Mong Kok, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 62,
+      "query": "China Cafe on Canton Road, Mong Kok, Hong Kong"
+    },
+    "Streets of Mong Kok": {
+      "latitude": 22.3203648,
+      "longitude": 114.169773,
+      "addressEn": "Mong Kok, Hong Kong",
+      "districtEn": "Mong Kok",
+      "reverseAddressEn": "Mong Kok, Hong Kong",
+      "source": "manual_approximation",
+      "confidence": 45,
+      "query": "Streets of Mong Kok, Hong Kong"
+    },
+    "Alleys of Mong Kok": {
+      "latitude": 22.3210526,
+      "longitude": 114.1708026,
+      "addressEn": "Fa Yuen St, Mong Kok, Hong Kong",
+      "districtEn": "Mong Kok",
+      "reverseAddressEn": "Yau Woo Building, 134 Fa Yuen St, Mong Kok, Hong Kong",
+      "source": "google_geocoding",
+      "confidence": 56,
+      "query": "Alleys of Mong Kok, Hong Kong"
+    },
+    "Neon-lit streets of Mong Kok": {
+      "latitude": 22.3203648,
+      "longitude": 114.169773,
+      "addressEn": "Mong Kok, Hong Kong",
+      "districtEn": "Mong Kok",
+      "reverseAddressEn": "Mong Kok, Hong Kong",
+      "source": "manual_approximation",
+      "confidence": 45,
+      "query": "Neon-lit streets of Mong Kok, Hong Kong"
+    }
+  }
+}

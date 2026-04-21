@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Spacing -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_s">8dp</dimen>
+    <dimen name="spacing_m">12dp</dimen>
+    <dimen name="spacing_l">16dp</dimen>
+    <dimen name="spacing_xl">20dp</dimen>
+    <dimen name="spacing_xxl">24dp</dimen>
+    <dimen name="spacing_xxxl">32dp</dimen>
+
+    <!-- Corner radii -->
+    <dimen name="radius_s">8dp</dimen>
+    <dimen name="radius_m">12dp</dimen>
+    <dimen name="radius_l">16dp</dimen>
+    <dimen name="radius_xl">20dp</dimen>
+    <dimen name="radius_pill">24dp</dimen>
+
+    <!-- Typography sizes -->
+    <dimen name="text_large_title">28sp</dimen>
+    <dimen name="text_title2">20sp</dimen>
+    <dimen name="text_headline">16sp</dimen>
+    <dimen name="text_body">15sp</dimen>
+    <dimen name="text_subhead">13sp</dimen>
+    <dimen name="text_caption">11sp</dimen>
+
+    <!-- Component sizes -->
+    <dimen name="icon_action_size">36dp</dimen>
+    <dimen name="icon_action_padding">6dp</dimen>
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_height_large">52dp</dimen>
+    <dimen name="poster_width_s">64dp</dimen>
+    <dimen name="poster_height_s">96dp</dimen>
+    <dimen name="poster_width_m">84dp</dimen>
+    <dimen name="poster_height_m">120dp</dimen>
+    <dimen name="poster_width_l">120dp</dimen>
+    <dimen name="poster_height_l">170dp</dimen>
+    <dimen name="poster_corner">10dp</dimen>
+
+    <!-- Bottom sheet -->
+    <dimen name="sheet_peek_height">300dp</dimen>
+    <dimen name="drag_handle_width">36dp</dimen>
+    <dimen name="drag_handle_height">5dp</dimen>
+
+    <!-- Bottom nav -->
+    <dimen name="bottom_nav_elevation">0dp</dimen>
+
+    <!-- Toolbar -->
+    <dimen name="toolbar_icon_size">44dp</dimen>
+    <dimen name="toolbar_icon_padding">10dp</dimen>
+</resources>

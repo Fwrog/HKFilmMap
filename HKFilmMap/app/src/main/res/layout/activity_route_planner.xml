@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surface"
+    android:orientation="vertical">
+
+    <!-- Toolbar (fixed) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spacing_l"
+        android:paddingTop="@dimen/spacing_m"
+        android:paddingEnd="@dimen/spacing_l"
+        android:paddingBottom="@dimen/spacing_xs">
+
+        <ImageButton
+            android:id="@+id/btnBackRoute"
+            android:layout_width="@dimen/toolbar_icon_size"
+            android:layout_height="@dimen/toolbar_icon_size"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/action_back"
+            android:padding="@dimen/toolbar_icon_padding"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/text_primary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_s"
+            android:layout_weight="1"
+            android:text="@string/route_builder_title"
+            style="@style/TextAppearance.App.Title2" />
+    </LinearLayout>
+
+    <!-- Scroll: config + map + tab panel (lists expand; whole block scrolls) -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/spacing_m">
+
+            <!-- Route config card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_xs"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separator"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_l">
+
+                    <TextView
+                        android:id="@+id/tvRouteSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/route_builder_subtitle"
+                        style="@style/TextAppearance.App.Subhead" />
+
+                    <com.google.android.material.button.MaterialButtonToggleGroup
+                        android:id="@+id/rgRandomMode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_m"
+                        app:selectionRequired="true"
+                        app:singleSelection="true">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/rbPreferNearby"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/route_mode_nearby"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/text_subhead" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/rbMoreRandom"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:text="@string/route_mode_random"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/text_subhead" />
+                    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGenerateMovieRoute"
+                        style="@style/Widget.App.Button.Primary"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/spacing_m"
+                        android:text="@string/action_generate_random_route" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOptimizeRoute"
+                        style="@style/Widget.App.Button.Secondary"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:text="@string/action_optimize_route" />
+
+                    <TextView
+                        android:id="@+id/tvMovieRouteHint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:text="@string/route_random_card_hint"
+                        style="@style/TextAppearance.App.Caption" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Map -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginHorizontal="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="0dp">
+
+                <fragment
+                    android:id="@+id/mapRoute"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Tabbed route panel: full list height inside scroll -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/spacing_l"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:minHeight="280dp"
+                app:cardBackgroundColor="@color/surface_card"
+                app:cardCornerRadius="@dimen/radius_l"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/separator"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/spacing_s">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tabLayoutRoute"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        app:tabGravity="fill"
+                        app:tabIndicatorColor="@color/colorPrimary"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabMode="fixed"
+                        app:tabSelectedTextColor="@color/colorPrimary"
+                        app:tabTextColor="@color/text_secondary" />
+
+                    <EditText
+                        android:id="@+id/inputRouteSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginHorizontal="@dimen/spacing_m"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:background="@drawable/bg_search_pill"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="@dimen/spacing_s"
+                        android:hint="@string/route_search_hint"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_tertiary"
+                        android:textSize="@dimen/text_subhead"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tvRouteEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/spacing_l"
+                        android:text="@string/hint_no_route"
+                        android:visibility="gone"
+                        style="@style/TextAppearance.App.Subhead" />
+
+                    <TextView
+                        android:id="@+id/tvCandidateEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_s"
+                        android:gravity="center"
+                        android:paddingHorizontal="@dimen/spacing_l"
+                        android:text="@string/route_no_candidates"
+                        android:visibility="gone"
+                        style="@style/TextAppearance.App.Subhead" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerRoute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingHorizontal="@dimen/spacing_m"
+                        android:paddingBottom="@dimen/spacing_s"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/item_route_scene" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerRouteCandidates"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:clipToPadding="false"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingHorizontal="@dimen/spacing_m"
+                        android:paddingBottom="@dimen/spacing_s"
+                        android:visibility="gone"
+                        tools:listitem="@layout/item_route_candidate" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Fixed bottom CTA -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface_card"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/spacing_l"
+        android:paddingTop="@dimen/spacing_s"
+        android:paddingBottom="@dimen/spacing_xs">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartNavigation"
+            style="@style/Widget.App.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_large"
+            android:text="@string/action_start_navigation" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearRoute"
+            style="@style/Widget.App.Button.Destructive"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/action_clear_route" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_nav_separator"
+        android:elevation="0dp"
+        app:itemIconTint="@color/bottom_nav_item_tint"
+        app:itemTextColor="@color/bottom_nav_item_tint"
+        app:menu="@menu/menu_bottom_nav" />
+</LinearLayout>
