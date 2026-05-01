@@ -20,6 +20,9 @@ backend/output/
 .env
 .env.*
 
+# Local generated exports
+output/
+
 # OS / editor noise
 .DS_Store
 Thumbs.db

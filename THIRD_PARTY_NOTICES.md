@@ -33,3 +33,4 @@ These third-party materials are **not claimed as original property of this repos
 - Use your own `TMDB`, `Google Maps`, and `Firebase` credentials.
 - Check provider terms before regenerating or redistributing data or media assets.
 - Treat this repository primarily as a coursework codebase and implementation reference unless you complete a separate legal and licensing review.
+- The README banner image `docs/media/readme-hero.png` is AI-generated project artwork created for repository presentation and does not contain intentionally copied third-party poster art or readable brand marks.
