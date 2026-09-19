@@ -1,0 +1,40 @@
+name: Deploy film atlas to GitHub Pages
+on:
+  push:
+    branches: [master]
+    paths: ['web/**', 'HKFilmMap/app/src/main/assets/hkfilmmap_seed.db', 'HKFilmMap/app/src/main/res/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 web/export_data.py
+      - run: node --test web/tests/model.test.mjs
+      - uses: actions/configure-pages@v5
+      - name: Package static files
+        run: |
+          mkdir _site
+          cp web/*.html web/*.css web/*.js web/catalogue.json _site/
+          cp -R web/assets web/vendor web/report _site/
+      - uses: actions/upload-pages-artifact@v3
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

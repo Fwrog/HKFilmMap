@@ -34,3 +34,13 @@ These third-party materials are **not claimed as original property of this repos
 - Check provider terms before regenerating or redistributing data or media assets.
 - Treat this repository primarily as a coursework codebase and implementation reference unless you complete a separate legal and licensing review.
 - The README banner image `docs/media/readme-hero.png` is AI-generated project artwork created for repository presentation and does not contain intentionally copied third-party poster art or readable brand marks.
+
+## Web atlas update
+
+- The Web atlas uses Leaflet 1.9.4 (BSD 2-Clause); its license is retained in `web/vendor/LEAFLET-LICENSE`.
+- Basemap data is © OpenStreetMap contributors, under the [Open Database License](https://www.openstreetmap.org/copyright). Standard tiles are loaded on demand from OpenStreetMap; no bulk download or offline prefetch is performed. [Tile usage policy](https://operations.osmfoundation.org/policies/tiles/) applies.
+- Newsreader and IBM Plex Sans are distributed under the SIL Open Font License; license files are included in `web/assets/fonts/`.
+- Poster files are copied from the original Android project's bundled assets. They remain third-party film artwork; the repository MIT license does not transfer film artwork rights. This product uses the TMDB API but is not endorsed or certified by TMDB.
+- Anitabi informed the map-first interaction design. No Anitabi code, screenshots or media assets are included.
+- `docs/design/city-frames.png` is an original abstract spatial composition using the project's place coordinates. It is a visual design study, not a navigation map.
+- The public course-report copy retains all four authors' attribution. Student identifiers and the authentication screenshot containing account details were removed before publication.

@@ -1,5 +1,7 @@
 # HKFilmMap Project Report
 
+> **Web update:** This document describes the original Android coursework. The subsequent [Web atlas](https://fwrog.github.io/HKFilmMap/) reuses its public catalogue with a separate browser interface. See the [README](../README.md) for current Web features and scope.
+
 ## Abstract
 
 HKFilmMap is an Android application designed for exploring Hong Kong film locations through an interactive map and a route-planning workflow. The app connects film information, filming places, scene descriptions, map-based points of interest, half-day route generation, check-ins, achievements, and nearby food or coffee recommendations.

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HKFilmMap — Hong Kong, through cinema</title>
+  <meta name="description" content="Explore Hong Kong through 68 films. Discover filming locations, connect scenes to streets, and build your own city itinerary.">
+  <meta name="theme-color" content="#183e37">
+  <meta property="og:title" content="HKFilmMap — Hong Kong, through cinema">
+  <meta property="og:description" content="A film atlas and city itinerary, made for the browser.">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml"><link rel="icon" href="assets/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css">
+  <script defer src="vendor/leaflet.js"></script><script type="module" src="app.js"></script>
+</head>
+<body class="atlas">
+<a class="skip" href="#library" data-i18n="skip">Skip to film library</a>
+<header class="masthead">
+  <a class="brand" href="./" aria-label="HKFilmMap home"><img src="assets/icon.svg" width="32" height="32" alt=""><span>HKFilmMap<small data-i18n="brandSub">THE CITY IS A FILM SET</small></span></a>
+  <nav aria-label="Main"><a class="nav-active" href="#library" data-i18n="explore">Explore the city</a><button id="about-open" data-i18n="about">About the project</button></nav>
+  <div class="header-end"><button id="route-toggle" aria-expanded="false"><span data-i18n="yourRoute">Your itinerary</span> <b id="route-badge">0</b></button><button id="language" lang="zh">中文</button><a href="https://github.com/Fwrog/HKFilmMap" aria-label="Source on GitHub">GitHub ↗</a></div>
+</header>
+<main class="workspace">
+  <aside class="library" id="library" tabindex="-1" aria-label="Film library">
+    <div class="library-heading"><p class="eyebrow" data-i18n="eyebrow">A FIELD GUIDE TO HONG KONG CINEMA</p><h1 data-i18n="heading">Hong Kong, on film.</h1>
+    <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Film, place or director" aria-label="Search films, places or directors"><kbd>/</kbd></label>
+    <div class="filters"><label><span class="sr-only" data-i18n="genre">Genre</span><select id="genre"></select></label><label><span class="sr-only" data-i18n="district">District</span><select id="district"></select></label></div>
+    <div class="library-tabs" role="group" aria-label="Browse by"><button data-view="films" aria-pressed="true" data-i18n="films">Films</button><button data-view="places" aria-pressed="false" data-i18n="places">Places</button><button data-view="notes" data-i18n="notes" aria-pressed="false">My notes</button><span id="result-count" role="status"></span></div></div>
+    <div id="notebook-actions" hidden><button class="primary" id="new-note" data-i18n="newNote">＋ New note</button><button id="export-notes" data-i18n="exportNotes">Export</button><label class="import-label"><span data-i18n="importNotes">Import</span><input type="file" id="import-notes" accept="application/json,.json" class="sr-only"></label></div><p id="note-status" role="status" hidden></p><div id="results" class="results"><p class="empty" data-i18n="loading">Loading the film atlas…</p></div>
+    <div class="library-foot" id="catalogue-count"></div>
+  </aside>
+  <section class="map-stage" aria-label="Hong Kong filming locations">
+    <div id="map" aria-label="Interactive map of filming locations"></div>
+    <div class="map-toolbar"><div><span class="live-dot"></span><span id="map-count"></span></div><button id="reset-map" data-i18n="showAll">Show all</button></div>
+    <div id="map-warning" class="map-warning" hidden role="status" data-i18n="mapWarning">The basemap could not load. Film locations and your itinerary remain available. Check your connection and reload.</div>
+    <div class="map-caption"><span data-i18n="harbour">Victoria Harbour</span><small>22°18′ N · 114°10′ E</small></div>
+    <article id="detail" class="detail" aria-live="polite" hidden></article>
+    <div class="map-legend"><i></i><span data-i18n="locations">Film locations</span><i class="route-swatch"></i><span data-i18n="yourRoute">Your itinerary</span></div>
+  </section>
+  <aside class="itinerary" id="itinerary" aria-label="Your itinerary" hidden><button id="route-close" class="panel-close" aria-label="Close itinerary">×</button>
+    <div class="itinerary-head"><span class="eyebrow" data-i18n="makeItADay">MAKE IT A DAY OUT</span><h2 data-i18n="itinerary">Your itinerary</h2><p data-i18n="routeIntro">A few scenes. A different way to see Hong Kong.</p></div>
+    <div class="route-tabs"><span id="stop-count"></span><button id="clear-route" data-i18n="clear">Clear</button></div>
+    <ol id="route-list" class="route-list"></ol>
+    <div id="route-empty" class="route-empty"><span class="empty-path" aria-hidden="true">○ ─ ─ ○ ─ ─ ○</span><h3 data-i18n="emptyRoute">Your next scene starts here.</h3><p data-i18n="emptyHelp">Choose a place on the map and add it to your itinerary, or start with a collection below.</p></div>
+    <div id="route-summary" class="route-summary" hidden></div>
+    <p id="save-status" class="save-status" role="status"></p>
+    <section class="collections"><h3 data-i18n="collections">A place to start</h3><button class="collection" data-tour="central"><span class="collection-no">HK</span><span><strong data-i18n="centralTitle">Central, on screen</strong><small data-i18n="centralSub">Markets, escalators & side streets · 4 stops</small></span><span aria-hidden="true">↗</span></button><button class="collection" data-tour="kowloon"><span class="collection-no">KL</span><span><strong data-i18n="kowloonTitle">Across the harbour</strong><small data-i18n="kowloonSub">Chungking Mansions to the waterfront · 3 stops</small></span><span aria-hidden="true">↗</span></button><p class="tiny" data-i18n="collectionHint">Collections add to your current itinerary.</p></section>
+    <footer class="colophon"><strong>HKFilmMap</strong><span>PolyU · LSGI541 · 2025/26</span><button id="credits-open" data-i18n="credits">Data & credits</button></footer>
+  </aside>
+</main>
+<dialog id="note-dialog"><form id="note-form"><div class="note-form-head"><h2 id="note-editor-title">New note</h2><button type="button" id="note-cancel" aria-label="Close">×</button></div><label><span data-i18n="noteTitle">Title</span><input id="note-title" required maxlength="100"></label><label><span data-i18n="notePlace">Place</span><select id="note-place" required></select></label><label><span data-i18n="noteText">Your note</span><textarea id="note-text" rows="5" maxlength="2000" required></textarea></label><p class="tiny" data-i18n="notePrivacy">Personal notes stay in this browser. Export a copy to keep them.</p><p id="note-error" role="alert"></p><button class="primary" type="submit" data-i18n="saveNote">Save note</button></form></dialog>
+<dialog id="about-dialog"><button class="dialog-close" aria-label="Close">×</button><div id="about-content"></div></dialog>
+<noscript><p>This film atlas requires JavaScript. Read the <a href="https://github.com/Fwrog/HKFilmMap">project documentation</a>.</p></noscript>
+</body></html>

@@ -1,130 +1,101 @@
-# HKFilmMap
+# <img src="web/assets/icon.svg" width="36" height="36" alt=""> HKFilmMap
 
-**The Hong Kong Polytechnic University (PolyU)**  
-**LSGI541 | Semester 2, 2025/26**
+### Hong Kong, through cinema.
 
-HKFilmMap is an Android location-based services project for exploring Hong Kong film locations, browsing movie-scene connections, and planning movie-themed half-day routes. It combines a mobile map interface with an offline Python data pipeline that packages film, place, scene, route, and recommendation data into a local SQLite seed database.
+An **Android app developed for PolyU LSGI541** (Semester 2, 2025/26), now extended with an interactive, desktop-first **Web atlas**. Browse films, discover their locations and put together a city itinerary.
 
-![HKFilmMap concept banner](docs/media/readme-hero.png)
+**[Open the Web atlas ↗](https://fwrog.github.io/HKFilmMap/)** · [中文说明](README.zh-CN.md) · [Project story](https://fwrog.github.io/HKFilmMap/project.html) · [Course report · PDF](web/report/HKFilmMap_Project_Report_Public.pdf)
 
-## Demo
+[![HKFilmMap Web atlas — linked film catalogue, location map and details](web/assets/web-desktop.png)](https://fwrog.github.io/HKFilmMap/)
 
-[![HKFilmMap demo preview](docs/media/demo-preview.gif)](docs/media/demo.mp4)
+> The coursework deliverable is the **Android app**. The Web atlas is a subsequent update built from its catalogue, with a separate interface and feature scope. The course report documents the Android project.
 
-- Full demo video: [docs/media/demo.mp4](docs/media/demo.mp4)
-- Project description: [docs/PROJECT_DESCRIPTION.md](docs/PROJECT_DESCRIPTION.md)
-- Configuration guide: [docs/CONFIGURATION.md](docs/CONFIGURATION.md)
+## Explore in your browser
 
-## Project At A Glance
+1. **Find a film** — search in English or Chinese, or filter by genre and district.
+2. **Follow its locations** — select a film, then a poster marker or location to read the scene record.
+3. **Make an itinerary** — add or remove stops, reorder them, optimise the straight-line order, and open walking directions in Google Maps.
+4. **Keep your notes** — create, edit, search and delete personal place notes. Undo a deletion, or export/import a JSON backup.
 
-| Item | Current project value |
-| --- | --- |
-| Platform | Android app opened and synced with Android Studio |
-| Core data | 68 movies, 97 places, 142 scene records |
-| Map-ready scenes | 85 scenes with usable coordinates |
-| Recommendations | 34 nearby food, coffee, and dessert records |
-| Main use case | Turn static film-location data into a city route users can actually follow |
-| Coursework context | PolyU LSGI541, Semester 2, 2025/26 |
+No account or API key is needed for the Web atlas. Itineraries and notes stay in the current browser. Basemap tiles need an internet connection; clearing browser storage removes personal content.
 
-## Main User Flow
+| Catalogue | Records |
+| :--- | ---: |
+| Films | 68 |
+| Places | 97 |
+| Scenes | 142 |
+| Map-ready scenes / distinct places | 85 / 57 |
 
-```text
-Register or log in
-  -> Browse Hong Kong film places on the map
-  -> Open movie or place details
-  -> Add favorite places to a route
-  -> Generate or edit a half-day route
-  -> Preview navigation, check in, and view nearby recommendations
+Counts come from the packaged SQLite database. Unmapped scenes remain accessible in film details. Film-location associations are course dataset records, not a claim that every record has been independently verified.
+
+## Android original · Web update
+
+| | Android coursework | Web update |
+| :--- | :--- | :--- |
+| Exploration | Google Maps, film catalogue, scene details | Leaflet map, poster markers, search, bilingual interface |
+| Itineraries | Editing, automatic half-day generation, optimisation | Up to 8 stops, manual editing, two starter collections, exact order optimisation |
+| Personal content | Accounts, scene check-ins, achievements | Browser-local place notes with import/export |
+| Nearby food | 34 recommendation records | Not included |
+| Navigation | Google Directions API | Opens Google Maps walking directions |
+| Storage | Room / SQLite, Firebase Authentication | Public JSON catalogue + local browser storage |
+
+The Web route optimiser fixes the first stop and minimises Haversine distance. Dotted lines show the stop sequence, **not walkable streets or travel times**. Check current access and closures before visiting.
+
+<details>
+<summary><strong>Watch the original Android demo</strong></summary>
+
+[![Android app demo](docs/media/demo-preview.gif)](docs/media/demo.mp4)
+
+[Full video](docs/media/demo.mp4) · [Android project description](docs/PROJECT_DESCRIPTION.md)
+
+</details>
+
+## Run locally
+
+**Web — no build step**
+
+```sh
+python3 -m http.server 4021 --directory web
+# Open http://localhost:4021
 ```
 
-## Core Features
+After changing the Android seed catalogue:
 
-- Map-based exploration of Hong Kong film locations
-- Movie catalog with poster, title, year, director, genre, and scene count
-- Place and movie detail pages that connect films, scenes, and locations
-- Route Planner with search, browse, manual ordering, route generation, and route optimization
-- Scene-level check-ins, achievement tracking, and nearby recommendation ranking
-- Offline backend workflow for cleaning spreadsheet data and rebuilding the app seed database
-
-## Technical Overview
-
-| Layer | Implementation summary |
-| --- | --- |
-| Android app | Java, Android SDK, Material Components, Google Maps SDK, Google Directions API, Firebase Authentication |
-| Local storage | Room / SQLite with tables for movies, places, scenes, check-ins, route plans, and route stops |
-| Data pipeline | Python scripts read `hk_movie_locations.xlsx`, merge manual overrides, optionally enrich TMDB metadata, validate links, and rebuild `hkfilmmap_seed.db` |
-| Map display | Zoom-responsive markers: clustered markers at low zoom, poster-stack markers at medium zoom, and fan-out poster markers at high zoom |
-| Route logic | Half-day route scoring balances distance, movie richness, coordinate confidence, genre preference, check-in history, and controlled randomness |
-| Optimization | Exact dynamic programming for up to 10 stops; nearest-neighbor plus 2-opt heuristic for larger route lists |
-| Recommendations | Nearby food and coffee ranking uses distance, district fit, time of day, price, film mood, and category diversity |
-
-## Repository Layout
-
-```text
-.
-|-- HKFilmMap/                 Android Studio project
-|-- backend/                   Offline data pipeline and override configs
-|-- docs/
-|   |-- media/                 README images, GIF preview, and demo video
-|   |-- CONFIGURATION.md       Local key and setup guide
-|   `-- PROJECT_DESCRIPTION.md Project report summary and algorithms
-`-- hk_movie_locations.xlsx    Root spreadsheet input for backend refresh
+```sh
+python3 web/export_data.py
+node --test web/tests/model.test.mjs
 ```
 
-## Quick Start
+**Android** — follow the [configuration guide](docs/CONFIGURATION.md), provide local Google Maps/Firebase configuration, then open `HKFilmMap/` in Android Studio. The repository snapshot does not include Gradle wrapper scripts.
 
-1. Read [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
-2. Create local-only config files, including `HKFilmMap/local.properties` and `HKFilmMap/app/google-services.json`.
-3. Open `HKFilmMap/` in Android Studio.
-4. Sync Gradle from Android Studio and build the app.
-5. If you want to regenerate data, set up the backend environment and run the backend scripts from the repository root.
+**Data pipeline** — see [backend/README.md](backend/README.md) for spreadsheet cleaning, manual overrides, TMDB enrichment and SQLite generation.
 
-## Backend Environment
+## Inside the repository
 
-```powershell
-conda env create -f backend/environment.yml
-conda activate backend
-pip install -r backend/requirements.txt
-```
+| Path | Purpose |
+| :--- | :--- |
+| [`HKFilmMap/`](HKFilmMap/) | Original Android Studio project |
+| [`web/`](web/) | Static Web atlas, catalogue, posters and public report |
+| [`backend/`](backend/) | Offline Python data pipeline |
+| [`docs/PROJECT_DESCRIPTION.md`](docs/PROJECT_DESCRIPTION.md) | Android architecture and algorithm notes |
+| [`docs/design/`](docs/design/) | Web design direction and original visual study |
+| [`.github/workflows/pages.yml`](.github/workflows/pages.yml) | Validate and deploy the Web atlas to GitHub Pages |
 
-Main refresh command:
+The Web exporter copies only movies, places and scenes. It does not publish user check-ins or saved Android routes. Deployment packages the public `web/` assets only; no server or database service is required.
 
-```powershell
-python backend/scripts/refresh_database.py
-```
+## Report & contributors
 
-The generated database is copied into:
+**[HKFilmMap: Exploring Hong Kong film locations through an interactive map](web/report/HKFilmMap_Project_Report_Public.pdf)** — 21 pages, English. Public copy: student identifiers and the account screenshot have been removed; authorship and report content are retained.
 
-```text
-HKFilmMap/app/src/main/assets/hkfilmmap_seed.db
-```
+| Contributor | Coursework contribution |
+| :--- | :--- |
+| Yikai Wu | Coding, algorithms, database and report lead |
+| Yu Cai | Map exploration, catalogue/detail interactions and presentation materials |
+| Anran Chen | Presentation design and report materials |
+| Junkai Meng | Demo video and presentation |
 
-## Local Configuration Summary
+Roles are summarised from the report's individual contribution statements. The Web checks cover the new browser interface and data model; they do not replace an Android build or device test.
 
-This repository intentionally excludes API keys and local machine paths. To run the full project, provide:
+## Credits & reuse
 
-- TMDB credentials for movie metadata enrichment
-- Google Maps / LBS credentials for map, routing, and optional geocoding features
-- Firebase local config for authentication flows
-
-Exact paths and example files are documented in [docs/CONFIGURATION.md](docs/CONFIGURATION.md).
-
-## Documentation
-
-- Local configuration: [docs/CONFIGURATION.md](docs/CONFIGURATION.md)
-- Backend workflow: [backend/README.md](backend/README.md)
-- Full project description: [docs/PROJECT_DESCRIPTION.md](docs/PROJECT_DESCRIPTION.md)
-- Third-party and usage notice: [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)
-
-## License
-
-Unless otherwise noted, the original source code and original documentation in this repository are provided under the [MIT License](LICENSE).
-
-Third-party services, trademarks, media-related materials, and derived metadata are not automatically relicensed by that file. Please read [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) before reuse or redistribution.
-
-## Coursework And Scope Notes
-
-- This repository is published as a PolyU LSGI541 Semester 2, 2025/26 coursework project and portfolio-style code sample.
-- Sensitive credentials are intentionally excluded from version control and must be supplied locally by anyone running the project.
-- The Android project is currently documented for Android Studio sync/build; Gradle wrapper scripts are not included in this repository snapshot.
-- The app currently keeps some Room access on the main thread and does not yet include automated tests.
+Original code and documentation: [MIT](LICENSE). Posters, film metadata and third-party materials retain their respective rights; see [third-party notices](THIRD_PARTY_NOTICES.md). Map: © OpenStreetMap contributors. Interface: Leaflet. The Web interaction design takes inspiration from [Anitabi](https://www.anitabi.cn/map), adapted to the project's own film catalogue.
