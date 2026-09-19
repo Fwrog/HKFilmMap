@@ -6,6 +6,14 @@
 
 **[打开 Web 地图 ↗](https://fwrog.github.io/HKFilmMap/?lang=zh)** · [English](README.md) · [项目介绍](https://fwrog.github.io/HKFilmMap/project.html?lang=zh) · [课程报告 PDF](web/report/HKFilmMap_Project_Report_Public.pdf)
 
+## Android 原版演示
+
+[![Android App 演示](docs/media/demo-preview.gif)](docs/media/demo.mp4)
+
+[完整视频](docs/media/demo.mp4) · [Android 架构与算法](docs/PROJECT_DESCRIPTION.md)
+
+## Web 更新
+
 [![Web 电影地图：电影目录、取景地点与详情联动](web/assets/web-desktop.png)](https://fwrog.github.io/HKFilmMap/?lang=zh)
 
 > 课程本身的开发成果是 **Android App**。Web 是后续新增的可视化更新，具有独立的界面与功能范围；课程报告介绍的是原 Android 项目。
@@ -39,15 +47,6 @@ Web 不需要登录或 API 密钥。个人笔记与行程保存在当前浏览�
 | 导航 | Google Directions API | 跳转 Google Maps 步行导航 |
 
 Web 固定首站并优化站间直线总距离。地图虚线只表示顺序，**不是可通行道路或步行时间**；到访前需要确认场所现状。
-
-<details>
-<summary><strong>查看 Android 原版演示</strong></summary>
-
-[![Android App 演示](docs/media/demo-preview.gif)](docs/media/demo.mp4)
-
-[完整视频](docs/media/demo.mp4) · [Android 架构与算法](docs/PROJECT_DESCRIPTION.md)
-
-</details>
 
 ## 本地运行与部署
 

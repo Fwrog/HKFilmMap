@@ -6,6 +6,14 @@ An **Android app developed for PolyU LSGI541** (Semester 2, 2025/26), now extend
 
 **[Open the Web atlas ↗](https://fwrog.github.io/HKFilmMap/)** · [中文说明](README.zh-CN.md) · [Project story](https://fwrog.github.io/HKFilmMap/project.html) · [Course report · PDF](web/report/HKFilmMap_Project_Report_Public.pdf)
 
+## Original Android app
+
+[![Android app demo](docs/media/demo-preview.gif)](docs/media/demo.mp4)
+
+[Full video](docs/media/demo.mp4) · [Android project description](docs/PROJECT_DESCRIPTION.md)
+
+## Web update
+
 [![HKFilmMap Web atlas — linked film catalogue, location map and details](web/assets/web-desktop.png)](https://fwrog.github.io/HKFilmMap/)
 
 > The coursework deliverable is the **Android app**. The Web atlas is a subsequent update built from its catalogue, with a separate interface and feature scope. The course report documents the Android project.
@@ -40,15 +48,6 @@ Counts come from the packaged SQLite database. Unmapped scenes remain accessible
 | Storage | Room / SQLite, Firebase Authentication | Public JSON catalogue + local browser storage |
 
 The Web route optimiser fixes the first stop and minimises Haversine distance. Dotted lines show the stop sequence, **not walkable streets or travel times**. Check current access and closures before visiting.
-
-<details>
-<summary><strong>Watch the original Android demo</strong></summary>
-
-[![Android app demo](docs/media/demo-preview.gif)](docs/media/demo.mp4)
-
-[Full video](docs/media/demo.mp4) · [Android project description](docs/PROJECT_DESCRIPTION.md)
-
-</details>
 
 ## Run locally
 
